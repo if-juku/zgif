@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zgif-converter"
+version = "0.1.0"
+description = "Video to ZGIF v1 animated sticker converter"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["imageio-ffmpeg>=0.5,<1"]
+
+[project.scripts]
+zgif = "zgif_converter.__main__:main"
+zgif-gui = "zgif_converter.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["zgif_converter*"]
